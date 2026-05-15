@@ -284,3 +284,7 @@ document.getElementById("studentAverage").addEventListener("input", generateRepo
 
 addCourse();
 generateReport();
+
+document.getElementById("saveBtn").addEventListener("click", function () {
+  console.log("Save button clicked");
+});
