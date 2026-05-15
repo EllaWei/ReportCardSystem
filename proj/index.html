@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dewey Institute Report Card Generator</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="top-bar">
+    <h1>Dewey Institute Report Card Generator</h1>
+    <p>Enter student and course information, then generate a printable report card.</p>
+  </header>
+
+  <main class="main-layout">
+
+    <!-- LEFT SIDE: INPUT FORM -->
+    <section class="form-panel">
+      <h2>Student Information</h2>
+
+      <div class="form-grid">
+        <label>
+          Student Name
+          <input type="text" id="studentName" placeholder="Enter student name" />
+        </label>
+
+        <label>
+          Student OEN
+          <input type="text" id="studentOEN" placeholder="Enter OEN" />
+        </label>
+
+        <label>
+          Grade
+          <input type="text" id="studentGrade" placeholder="e.g. 11" />
+        </label>
+
+        <label>
+          Date
+          <input type="date" id="reportDate" />
+        </label>
+
+        <label>
+          Report Period
+          <input type="text" id="reportPeriod" placeholder="e.g. Term 1" />
+        </label>
+
+        <label>
+          Current Term Student Average
+          <input type="text" id="studentAverage" placeholder="e.g. 85.5" />
+        </label>
+      </div>
+
+      <hr />
+
+      <div class="section-title-row">
+        <h2>Course Information</h2>
+        <button type="button" id="addCourseBtn">+ Add Course</button>
+      </div>
+
+      <div id="coursesContainer">
+        <!-- Courses will be added here by script.js -->
+      </div>
+
+      <div class="button-row">
+        <button type="button" id="generateBtn">Generate Report Card</button>
+        <button type="button" id="printBtn">Export PDF / Print</button>
+      </div>
+    </section>
+
+
+    <!-- RIGHT SIDE: REPORT CARD PREVIEW -->
+    <section class="preview-panel">
+      <div id="reportCard" class="report-card">
+
+        <!-- HEADER -->
+        <div class="report-header">
+          <div class="logo-box">
+            <img src="images/logo.png" alt="Dewey Institute Logo" class="school-logo" />
+          </div>
+
+          <div class="report-title">
+            <h2>Dewey Institute</h2>
+            <p>2024-2025 &nbsp; Term 1</p>
+            <p>Midterm / Final</p>
+            <p>Report Card</p>
+          </div>
+
+          <div class="school-info">
+            <p>119 Wellington Street</p>
+            <p>Bracebridge, ON, Canada P1L 1E2</p>
+            <p>Tel: (705) 990-2030</p>
+            <p>email: info@deweyinstitute.com</p>
+            <p>http://www.deweyinstitute.com</p>
+          </div>
+        </div>
+
+        <!-- STUDENT INFO TABLE -->
+        <table class="student-info-table">
+          <tr>
+            <td>
+              <p>Student name: <span id="previewStudentName"></span></p>
+              <p>Student OEN: <span id="previewStudentOEN"></span></p>
+              <p>Grade: <span id="previewStudentGrade"></span></p>
+            </td>
+
+            <td>
+              <p>Date: <span id="previewDate"></span></p>
+              <p>Principal: &nbsp;&nbsp;&nbsp;&nbsp; Craig Shelswell</p>
+              <p>Report Period: <span id="previewReportPeriod"></span></p>
+            </td>
+          </tr>
+        </table>
+
+        <!-- COURSE TABLE -->
+        <table class="course-report-table">
+          <thead>
+            <tr>
+              <th rowspan="2" class="course-column">Course</th>
+              <th rowspan="2" class="vertical-header">Percentage Grade</th>
+              <th rowspan="2" class="vertical-header">Course Median</th>
+              <th rowspan="2" class="vertical-header">Credit Earned</th>
+              <th rowspan="2" class="comments-column">
+                Comments<br />
+                <span>Strengths/Next Steps for Improvement</span>
+              </th>
+              <th colspan="2">Attendance</th>
+              <th rowspan="2" class="vertical-header">Responsibility</th>
+              <th rowspan="2" class="vertical-header">Organization</th>
+              <th rowspan="2" class="vertical-header">Independent Work</th>
+              <th rowspan="2" class="vertical-header">Collaboration</th>
+              <th rowspan="2" class="vertical-header">Initiative</th>
+              <th rowspan="2" class="vertical-header">Self-Regulation</th>
+            </tr>
+
+            <tr>
+              <th>Classes Missed<br />Total Classes</th>
+              <th>Lates</th>
+            </tr>
+          </thead>
+
+          <tbody id="previewCourseRows">
+            <!-- Course rows will be generated here -->
+          </tbody>
+        </table>
+
+        <!-- FOOTER -->
+        <div class="report-footer-top">
+          <p>
+            Current Term Student Average:
+            <span id="previewStudentAverage"></span>
+          </p>
+
+          <p>
+            Learning Skills:
+            E - Excellent &nbsp;&nbsp;
+            G - Good &nbsp;&nbsp;
+            S - Satisfactory &nbsp;&nbsp;
+            N - Needs Improvement
+          </p>
+        </div>
+
+        <div class="report-bottom">
+          <div class="signature-section">
+            <img src="images/signature.png" alt="Principal Signature" class="signature-img" />
+            <div class="signature-line"></div>
+            <p>Principal's Signature</p>
+          </div>
+
+          <p class="report-note">
+            To parents or guardians and students: This copy of the report card should be kept for reference.
+            The original or an exact copy has been placed in the student's Ontario Student Record (OSR)
+            folder and will be retained for five years after the student leaves the school.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- COURSE FORM TEMPLATE -->
+  <template id="courseTemplate">
+    <div class="course-form-card">
+      <div class="course-card-header">
+        <h3>Course <span class="course-number"></span></h3>
+        <button type="button" class="remove-course-btn">Remove</button>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          Course
+          <select class="course-select">
+            <option value="">Select course</option>
+            <option value="English">English</option>
+            <option value="Canadian Literature">Canadian Literature</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Advanced Functions">Advanced Functions</option>
+            <option value="Calculus and Vectors">Calculus and Vectors</option>
+            <option value="Data Management">Data Management</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Biology">Biology</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Economics">Economics</option>
+            <option value="Business">Business</option>
+            <option value="Accounting">Accounting</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+            <option value="Visual Arts">Visual Arts</option>
+          </select>
+        </label>
+
+        <label>
+          Course Code
+          <select class="course-code-select">
+            <option value="">Select course code</option>
+          </select>
+        </label>
+
+        <label>
+          Course Teacher
+          <input type="text" class="course-teacher" placeholder="Teacher name" />
+        </label>
+
+        <label>
+          Percentage Grade
+          <input type="number" class="percentage-grade" placeholder="e.g. 88" />
+        </label>
+
+        <label>
+          Course Median
+          <input type="number" class="course-median" placeholder="e.g. 90" />
+        </label>
+
+        <label>
+          Credit Earned
+          <input type="text" class="credit-earned" placeholder="e.g. 1.00" />
+        </label>
+
+        <label>
+          Classes Missed
+          <input type="number" class="classes-missed" placeholder="e.g. 0" />
+        </label>
+
+        <label>
+          Total Classes
+          <input type="number" class="total-classes" placeholder="e.g. 44" />
+        </label>
+
+        <label>
+          Lates
+          <input type="number" class="lates" placeholder="e.g. 0" />
+        </label>
+      </div>
+
+      <label class="full-width-label">
+        Comments / Strengths / Next Steps for Improvement
+        <textarea
+          class="course-comments"
+          maxlength="350"
+          placeholder="Maximum 50 words"
+        ></textarea>
+        <small class="word-count">0 / 50 words</small>
+      </label>
+
+      <h4>Learning Skills</h4>
+
+      <div class="form-grid learning-grid">
+        <label>
+          Responsibility
+          <select class="responsibility">
+            <option value="E">E - Excellent</option>
+            <option value="G">G - Good</option>
+            <option value="S">S - Satisfactory</option>
+            <option value="N">N - Needs Improvement</option>
+          </select>
+        </label>
+
+        <label>
+          Organization
+          <select class="organization">
+            <option value="E">E - Excellent</option>
+            <option value="G">G - Good</option>
+            <option value="S">S - Satisfactory</option>
+            <option value="N">N - Needs Improvement</option>
+          </select>
+        </label>
+
+        <label>
+          Independent Work
+          <select class="independent-work">
+            <option value="E">E - Excellent</option>
+            <option value="G">G - Good</option>
+            <option value="S">S - Satisfactory</option>
+            <option value="N">N - Needs Improvement</option>
+          </select>
+        </label>
+
+        <label>
+          Collaboration
+          <select class="collaboration">
+            <option value="E">E - Excellent</option>
+            <option value="G">G - Good</option>
+            <option value="S">S - Satisfactory</option>
+            <option value="N">N - Needs Improvement</option>
+          </select>
+        </label>
+
+        <label>
+          Initiative
+          <select class="initiative">
+            <option value="E">E - Excellent</option>
+            <option value="G">G - Good</option>
+            <option value="S">S - Satisfactory</option>
+            <option value="N">N - Needs Improvement</option>
+          </select>
+        </label>
+
+        <label>
+          Self-Regulation
+          <select class="self-regulation">
+            <option value="E">E - Excellent</option>
+            <option value="G">G - Good</option>
+            <option value="S">S - Satisfactory</option>
+            <option value="N">N - Needs Improvement</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDuJUj9KQ601F3_xLXOK-C6hoLqJbBgwdo",
+    authDomain: "dewey-report-system.firebaseapp.com",
+    projectId: "dewey-report-system",
+    storageBucket: "dewey-report-system.firebasestorage.app",
+    messagingSenderId: "91278331489",
+    appId: "1:91278331489:web:011de75a1fae06352a6420",
+    measurementId: "G-Y1TVLLP0RD"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  console.log("Firebase connected successfully!");
+</script>
+</body>
+</html>
+
