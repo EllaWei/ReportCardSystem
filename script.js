@@ -182,6 +182,9 @@ function generateReport() {
   document.getElementById("previewStudentAverage").textContent =
     document.getElementById("studentAverage").value;
 
+  document.getElementById("previewReportType").textContent =
+    document.getElementById("reportType").value;
+
   const previewCourseRows = document.getElementById("previewCourseRows");
   previewCourseRows.innerHTML = "";
 

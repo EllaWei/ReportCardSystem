@@ -43,9 +43,17 @@
         </label>
 
         <label>
-          Report Period
-          <input type="text" id="reportPeriod" placeholder="e.g. Term 1" />
-        </label>
+  Report Period
+  <input type="text" id="reportPeriod" placeholder="e.g. Term 1" />
+</label>
+
+<label>
+  Report Type
+  <select id="reportType">
+    <option value="Midterm">Midterm</option>
+    <option value="Final">Final</option>
+  </select>
+</label>
 
         <label>
           Current Term Student Average
@@ -84,7 +92,7 @@
           <div class="report-title">
             <h2>Dewey Institute</h2>
             <p>2024-2025 &nbsp; Term 1</p>
-            <p>Midterm / Final</p>
+            <p id="previewReportType">Midterm</p>
             <p>Report Card</p>
           </div>
 
