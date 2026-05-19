@@ -83,7 +83,6 @@ const printBtn = document.getElementById("printBtn");
 
 addCourseBtn.addEventListener("click", addCourse);
 generateBtn.addEventListener("click", generateReport);
-
 printBtn.addEventListener("click", function () {
   generateReport();
   window.print();
@@ -165,18 +164,6 @@ function updateCourseNumbers() {
 }
 
 function generateReport() {
-  const year = document.getElementById("schoolYear").value;
-  const term = document.getElementById("termNumber").value;
-  const reportType = document.getElementById("reportType").value;
-
-  document.getElementById("previewYearTerm").innerHTML =
-    `${year} &nbsp; ${term}`;
-
-  document.getElementById("previewReportType").textContent = reportType;
-
-  document.getElementById("previewReportPeriod").textContent =
-    `${term} ${reportType}`;
-
   document.getElementById("previewStudentName").textContent =
     document.getElementById("studentName").value;
 
@@ -188,6 +175,9 @@ function generateReport() {
 
   document.getElementById("previewDate").textContent =
     formatDate(document.getElementById("reportDate").value);
+
+  document.getElementById("previewReportPeriod").textContent =
+    document.getElementById("reportPeriod").value;
 
   document.getElementById("previewStudentAverage").textContent =
     document.getElementById("studentAverage").value;
@@ -289,11 +279,8 @@ document.getElementById("studentName").addEventListener("input", generateReport)
 document.getElementById("studentOEN").addEventListener("input", generateReport);
 document.getElementById("studentGrade").addEventListener("input", generateReport);
 document.getElementById("reportDate").addEventListener("input", generateReport);
+document.getElementById("reportPeriod").addEventListener("input", generateReport);
 document.getElementById("studentAverage").addEventListener("input", generateReport);
-
-document.getElementById("schoolYear").addEventListener("change", generateReport);
-document.getElementById("termNumber").addEventListener("change", generateReport);
-document.getElementById("reportType").addEventListener("change", generateReport);
 
 addCourse();
 generateReport();

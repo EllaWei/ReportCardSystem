@@ -43,31 +43,8 @@
         </label>
 
         <label>
-          School Year
-          <select id="schoolYear">
-            <option value="2024-2025">2024-2025</option>
-            <option value="2025-2026">2025-2026</option>
-            <option value="2026-2027">2026-2027</option>
-            <option value="2027-2028">2027-2028</option>
-          </select>
-        </label>
-
-        <label>
-          Term
-          <select id="termNumber">
-            <option value="Term 1">Term 1</option>
-            <option value="Term 2">Term 2</option>
-            <option value="Term 3">Term 3</option>
-            <option value="Term 4">Term 4</option>
-          </select>
-        </label>
-
-        <label>
-          Report Type
-          <select id="reportType">
-            <option value="Midterm">Midterm</option>
-            <option value="Final">Final</option>
-          </select>
+          Report Period
+          <input type="text" id="reportPeriod" placeholder="e.g. Term 1" />
         </label>
 
         <label>
@@ -90,7 +67,6 @@
       <div class="button-row">
         <button type="button" id="generateBtn">Generate Report Card</button>
         <button type="button" id="printBtn">Export PDF / Print</button>
-        <button type="button" id="saveBtn">Save to Firebase</button>
       </div>
     </section>
 
@@ -107,8 +83,8 @@
 
           <div class="report-title">
             <h2>Dewey Institute</h2>
-            <p id="previewYearTerm">2024-2025 &nbsp; Term 1</p>
-            <p id="previewReportType">Midterm</p>
+            <p>2024-2025 &nbsp; Term 1</p>
+            <p>Midterm / Final</p>
             <p>Report Card</p>
           </div>
 
@@ -354,29 +330,33 @@
           </select>
         </label>
       </div>
-    </div>
+    </div> 
   </template>
-
+<button type="button" id="saveBtn">
+  Save to Firebase
+</button>
   <script src="script.js"></script>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDuJUj9KQ601F3_xLXOK-C6hoLqJbBgwdo",
-      authDomain: "dewey-report-system.firebaseapp.com",
-      projectId: "dewey-report-system",
-      storageBucket: "dewey-report-system.firebasestorage.app",
-      messagingSenderId: "91278331489",
-      appId: "1:91278331489:web:011de75a1fae06352a6420",
-      measurementId: "G-Y1TVLLP0RD"
-    };
+  const firebaseConfig = {
+    apiKey: "AIzaSyDuJUj9KQ601F3_xLXOK-C6hoLqJbBgwdo",
+    authDomain: "dewey-report-system.firebaseapp.com",
+    projectId: "dewey-report-system",
+    storageBucket: "dewey-report-system.firebasestorage.app",
+    messagingSenderId: "91278331489",
+    appId: "1:91278331489:web:011de75a1fae06352a6420",
+    measurementId: "G-Y1TVLLP0RD"
+  }; 
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-    console.log("Firebase connected successfully!");
-  </script>
+  console.log("Firebase connected successfully!");
+</script>
 </body>
 </html>
+
+ 
