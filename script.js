@@ -185,6 +185,9 @@ function generateReport() {
   document.getElementById("previewReportType").textContent =
     document.getElementById("reportType").value;
 
+  document.getElementById("previewHeaderTerm").textContent =
+    document.getElementById("reportPeriod").value;
+
   const previewCourseRows = document.getElementById("previewCourseRows");
   previewCourseRows.innerHTML = "";
 
