@@ -288,3 +288,9 @@ generateReport();
 document.getElementById("saveBtn").addEventListener("click", function () {
   console.log("Save button clicked");
 });
+
+const year = document.getElementById("schoolYear").value;
+const term = document.getElementById("termNumber").value;
+const type = document.getElementById("reportType").value;
+
+console.log(`${year} ${term} ${type}`);

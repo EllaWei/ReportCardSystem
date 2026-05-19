@@ -83,8 +83,29 @@
 
           <div class="report-title">
             <h2>Dewey Institute</h2>
-            <p>2024-2025 &nbsp; Term 1</p>
-            <p>Midterm / Final</p>
+            <p>
+              <select id="schoolYear">
+                <option value="2024-2025">2024-2025</option>
+                <option value="2025-2026">2025-2026</option>
+                <option value="2026-2027">2026-2027</option>
+                <option value="2027-2028">2027-2028</option>
+              </select>
+
+              &nbsp;
+
+              <select id="termNumber">
+                <option value="Term 1">Term 1</option>
+                <option value="Term 2">Term 2</option>
+                <option value="Term 3">Term 3</option>
+                <option value="Term 4">Term 4</option>
+              </select>
+              </p>
+            <p>
+              <select id="reportType">
+               <option value="Midterm">Midterm</option>
+                <option value="Final">Final</option>
+              </select>
+            </p>
             <p>Report Card</p>
           </div>
 
@@ -330,7 +351,7 @@
           </select>
         </label>
       </div>
-    </div>
+    </div> 
   </template>
 <button type="button" id="saveBtn">
   Save to Firebase
@@ -349,7 +370,7 @@
     messagingSenderId: "91278331489",
     appId: "1:91278331489:web:011de75a1fae06352a6420",
     measurementId: "G-Y1TVLLP0RD"
-  };
+  }; 
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
