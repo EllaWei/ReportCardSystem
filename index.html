@@ -42,10 +42,32 @@
           <input type="date" id="reportDate" />
         </label>
 
-        <label>
-          Report Period
-          <input type="text" id="reportPeriod" placeholder="e.g. Term 1" />
-        </label>
+        <label>School Year</label>
+          <select id="schoolYear">
+            <option value="2024-2025">2024-2025</option>
+            <option value="2025-2026">2025-2026</option>
+            <option value="2026-2027">2026-2027</option>
+          </select>
+
+        <label>Term</label>
+        
+<select id="termNumber">
+  <option value="Term 1">Term 1</option>
+  <option value="Term 2">Term 2</option>
+  <option value="Term 3">Term 3</option>
+  <option value="Term 4">Term 4</option>
+</select>
+
+<label>Report Type</label>
+<select id="reportType">
+  <option value="Midterm">Midterm</option>
+  <option value="Final">Final</option>
+</select>
+
+<div class="button-row">
+  <button type="button" id="generateBtn">Generate Report Card</button>
+  <button type="button" id="printBtn">Export PDF / Print</button>
+</div>
 
         <label>
           Current Term Student Average
@@ -83,29 +105,8 @@
 
           <div class="report-title">
             <h2>Dewey Institute</h2>
-            <p>
-              <select id="schoolYear">
-                <option value="2024-2025">2024-2025</option>
-                <option value="2025-2026">2025-2026</option>
-                <option value="2026-2027">2026-2027</option>
-                <option value="2027-2028">2027-2028</option>
-              </select>
-
-              &nbsp;
-
-              <select id="termNumber">
-                <option value="Term 1">Term 1</option>
-                <option value="Term 2">Term 2</option>
-                <option value="Term 3">Term 3</option>
-                <option value="Term 4">Term 4</option>
-              </select>
-              </p>
-            <p>
-              <select id="reportType">
-               <option value="Midterm">Midterm</option>
-                <option value="Final">Final</option>
-              </select>
-            </p>
+            <p id="previewYearTerm">2024-2025 &nbsp; Term 1</p>
+            <p id="previewReportType">Midterm</p>
             <p>Report Card</p>
           </div>
 

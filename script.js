@@ -279,7 +279,7 @@ document.getElementById("studentName").addEventListener("input", generateReport)
 document.getElementById("studentOEN").addEventListener("input", generateReport);
 document.getElementById("studentGrade").addEventListener("input", generateReport);
 document.getElementById("reportDate").addEventListener("input", generateReport);
-document.getElementById("reportPeriod").addEventListener("input", generateReport);
+
 document.getElementById("studentAverage").addEventListener("input", generateReport);
 
 addCourse();
@@ -289,8 +289,17 @@ document.getElementById("saveBtn").addEventListener("click", function () {
   console.log("Save button clicked");
 });
 
-const year = document.getElementById("schoolYear").value;
-const term = document.getElementById("termNumber").value;
-const type = document.getElementById("reportType").value;
+function updateReportHeader() {
+  const year = document.getElementById("schoolYear").value;
+  const term = document.getElementById("termNumber").value;
+  const type = document.getElementById("reportType").value;
 
-console.log(`${year} ${term} ${type}`);
+  document.getElementById("previewYearTerm").innerHTML = `${year} &nbsp; ${term}`;
+  document.getElementById("previewReportType").textContent = type;
+}
+
+document.getElementById("schoolYear").addEventListener("change", updateReportHeader);
+document.getElementById("termNumber").addEventListener("change", updateReportHeader);
+document.getElementById("reportType").addEventListener("change", updateReportHeader);
+
+updateReportHeader();
