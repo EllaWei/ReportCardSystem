@@ -60,11 +60,13 @@ label {
 input,
 select,
 textarea {
+  width: 100%;
   margin-top: 4px;
   padding: 7px;
   border: 1px solid #aaa;
   font-size: 14px;
   font-family: Arial, sans-serif;
+  background: white;
 }
 
 textarea {
@@ -82,6 +84,11 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.button-row {
+  gap: 8px;
+  margin-top: 12px;
 }
 
 button {
@@ -340,4 +347,3 @@ table {
     margin: 0.35in;
   }
 }
-
