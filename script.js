@@ -205,6 +205,14 @@ function addCourse() {
 
   const courseSelect = courseCard.querySelector(".course-select");
   const codeSelect = courseCard.querySelector(".course-code-select");
+
+Object.keys(courseCodeMap).forEach(function (courseName) {
+  const option = document.createElement("option");
+  option.value = courseName;
+  option.textContent = courseName;
+  courseSelect.appendChild(option);
+});
+  
   const removeBtn = courseCard.querySelector(".remove-course-btn");
   const commentsBox = courseCard.querySelector(".course-comments");
   const wordCount = courseCard.querySelector(".word-count");
