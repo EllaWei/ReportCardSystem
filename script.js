@@ -270,7 +270,6 @@ function updateCourseNumbers() {
 }
 
 function generateReport() {
-  debugger;
   document.getElementById("previewStudentName").textContent =
     document.getElementById("studentName").value;
 
