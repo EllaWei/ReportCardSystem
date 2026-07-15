@@ -196,7 +196,7 @@ printBtn.addEventListener("click", function () {
 
 function addCourse() {
   courseCount++;
-
+debugger;
   const templateContent = courseTemplate.content.cloneNode(true);
   const courseCard = templateContent.querySelector(".course-form-card");
 
