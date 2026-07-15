@@ -196,7 +196,7 @@ printBtn.addEventListener("click", function () {
 
 function addCourse() {
   courseCount++;
-debugger;
+
   const templateContent = courseTemplate.content.cloneNode(true);
   const courseCard = templateContent.querySelector(".course-form-card");
 
@@ -270,6 +270,7 @@ function updateCourseNumbers() {
 }
 
 function generateReport() {
+  debugger;
   document.getElementById("previewStudentName").textContent =
     document.getElementById("studentName").value;
 
