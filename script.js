@@ -1,3 +1,5 @@
+
+/*
 const courseCodeMap = {
   "English": ["ENL1W", "ENG2D", "ENG2P", "ENG3U", "ENG4U"],
   "Media Studies": ["EMS3O"],
@@ -176,6 +178,108 @@ const courseDescriptionMap = {
   "ELDCO": "English Literacy Development Level 3",
   "ELDDO": "English Literacy Development Level 4",
   "ELDEO": "English Literacy Development Level 5"
+};
+*/
+
+const courseCodeMap = {
+  "English": ["ENG1W", "ENG2D", "ENG3U", "ENG4U", "EAE1D", "EAE2D", "EAE3U", "EAE4U", "ELSCO", "ESLDO", "ESLEO", "ENG1W", "ELS2O", "EPS3O"],
+  "Canadian Literature": ["ETC3M", "ETC4M"],
+  "Mathematics": ["MTH1W", "MPM2D", "MCR3U", "MCF3M"],
+  "Advanced Functions": ["MHF4U"],
+  "Calculus and Vectors": ["MCV4U"],
+  "Data Management": ["MDM4U"],
+  "Physics": ["SPH3U", "SPH4U"],
+  "Chemistry": ["SCH3U", "SCH4U"],
+  "Biology": ["SBI3U", "SBI4U"],
+  "Computer Science": ["ICS3U", "ICS4U"],
+  "Economics": ["CIE3M", "CIA4U"],
+  "Business": ["BBI2O", "BAF3M", "BAT4M", "BOH4M"],
+  "Accounting": ["BAF3M", "BAT4M"],
+  "History": ["CHC2D", "CHA3U", "CHY4U"],
+  "Geography": ["CGC1D", "CGF3M", "CGW4U"],
+  "Visual Arts": ["AVI1O", "AVI2O", "AVI3M", "AVI4M"],
+  "Civics and Citizenship Career Studies": ["CHV2O","GLC2O"],
+  "Drama": ["ADA1O", "ADA2O", "ADA3M", "ADA4M"],
+  "Social Science" : ["HFC3M", "HHD3O", "HPC3O", "HPW3C", "HSB4U", "HHS4C", "HPC4O", "HSE4M", "HZT4O"]
+};
+
+const courseDescriptionMap = {
+  "ENG1W": "English, Grade 9, Academic",
+  "ENG2D": "English, Grade 10, Academic",
+  "ENG3U": "English, Grade 11, University Prep",
+  "ENG4U": "English, Grade 12, University Prep",
+  "EAE1D": "English, Grade 9, Academic",
+  "EAE2D": "English, Grade 10, Academic",
+  "EAE3U": "English, Grade 11, University Prep",
+  "EAE4U": "English, Grade 12, University Prep",
+  "ELSCO": "English as a Second Language, Level 3",
+  "ESLDO": "English as a Second Language, Level 4",
+  "ESLEO": "English as a Second Language, Level 5",
+  "ENG1W": "English, Grade 9",
+  "ELS2O": "Literacy Skills: Reading and Writing",
+  "EPS3O": "Presentation and Speaking Skills",
+
+  "ETC3M": "Canadian Literature, Grade 11, University/College Prep",
+  "ETC4M": "Canadian Literature, Grade 12, University/College Prep",
+
+  "MTH1W": "Mathematics, Grade 9",
+  "MPM2D": "Principles of Mathematics, Grade 10, Academic",
+  "MCR3U": "Functions, Grade 11, University Prep",
+  "MCF3M": "Functions and Applications, Grade 11, University/College Prep",
+  "MHF4U": "Advanced Functions, Grade 12, University Prep",
+  "MCV4U": "Calculus and Vectors, Grade 12, University Prep",
+  "MDM4U": "Mathematics of Data Management, Grade 12, University Prep",
+
+  "SPH3U": "Physics, Grade 11, University Prep",
+  "SPH4U": "Physics, Grade 12, University Prep",
+
+  "SCH3U": "Chemistry, Grade 11, University Prep",
+  "SCH4U": "Chemistry, Grade 12, University Prep",
+
+  "SBI3U": "Biology, Grade 11, University Prep",
+  "SBI4U": "Biology, Grade 12, University Prep",
+
+  "ICS3U": "Introduction to Computer Science, Grade 11, University Prep",
+  "ICS4U": "Computer Science, Grade 12, University Prep",
+
+  "CIE3M": "Economics, Grade 11, University/College Prep",
+  "CIA4U": "Analyzing Current Economic Issues, Grade 12, University Prep",
+
+  "BBI2O": "Introduction to Business, Grade 10, Open",
+  "BAF3M": "Financial Accounting Fundamentals, Grade 11, University/College Prep",
+  "BAT4M": "Financial Accounting Principles, Grade 12, University/College Prep",
+  "BOH4M": "Business Leadership, Grade 12, University/College Prep",
+
+  "CHC2D": "Canadian History since World War I, Grade 10, Academic",
+  "CHA3U": "American History, Grade 11, University Prep",
+  "CHY4U": "World History, Grade 12, University Prep",
+
+  "CGC1D": "Issues in Canadian Geography, Grade 9, Academic",
+  "CGF3M": "Physical Geography, Grade 11, University/College Prep",
+  "CGW4U": "World Issues, Grade 12, University Prep",
+
+  "AVI1O": "Visual Arts, Grade 9, Open",
+  "AVI2O": "Visual Arts, Grade 10, Open",
+  "AVI3M": "Visual Arts, Grade 11, University/College Prep",
+  "AVI4M": "Visual Arts, Grade 12, University/College Prep",
+
+  "ADA1O": "Drama, Grade 9, Open",
+  "ADA2O": "Drama, Grade 10, Open",
+  "ADA3M": "Drama, Grade 11, University/College Prep",
+  "ADA4M": "Drama, Grade 12, University/College Prep",
+
+  "CHV2O": "Civics and Citizenship, Grade 10, Open",
+  "GLC2O": "Career Studies, Grade 10, Open",
+
+  "HFC3M": "Food and Culture",
+  "HHD3O": "Dynamics of Human Relationships",
+  "HPC3O": "Raising Healthy Children",
+  "HPW3C": "Raising Healthy Children",
+  "HSB4U": "Challenge and Change in Society",
+  "HHS4C": "Families in Canada",
+  "HPC4O": "Personal Life Management",
+  "HSE4M": "Equity and Social Justice: From Theory to Practice",
+  "HZT4O": "Philosophy: The Big Questions",
 };
 
 let courseCount = 0;
