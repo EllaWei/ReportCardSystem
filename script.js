@@ -34,7 +34,7 @@ const courseCodeMap = {
   "Canada: History, Identity, and Culture": ["CHI4U"],
   "Exploring Family Studies": ["HIF1O"],
   "Food and Nutrition": ["HFN1O", "HFN2O"],
-  "Introduction to Anthropology, Psychology & Sociology": ["HSP3U"],
+  "Introduction to Anthropology, Psychology and Sociology": ["HSP3U"],
   "Families in Canada": ["HHS4U", "HHS4C"],
   "The Challenge and Change in Society": ["HNB4M"],
   "Nutrition and Health": ["HFA4U"],
