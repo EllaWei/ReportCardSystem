@@ -49,7 +49,7 @@ const courseCodeMap = {
   "Financial Accounting Principles": ["BAT4M"],
   "International Business Fundamentals": ["BBB4M"],
   "Business Leadership: Management Fundamentals": ["BOH4M"],
-  "Digital Technology &amp; Innovations in the Changing World": ["ICD2O"],
+  "Digital Technology and Innovations in the Changing World": ["ICD2O"],
   "Introduction to Computer Science": ["ICS3U"],
   "Computer Science": ["ICS4U"],
   "Technology and the Skilled Trades": ["TAS1O", "TAS2O"],
